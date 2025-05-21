@@ -1,59 +1,35 @@
-public class Student {
-    private int id;
-    private String name;
-    private String surname;
+public class Student extends User {
     private double gpa;
+    private String courses[] = new String[100];
+    private int indexOfCourse = 0;
 
     public Student() {
-
     }
 
-    public Student(int id, String name, String surname, double gpa) {
-        this.id = id;
-        this.name = name;
-        this.surname = surname;
+    public Student(int id, String login, String password, String name, String surname, int age, double gpa) {
+        super(id, login, password, name, surname);
         this.gpa = gpa;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getSurname() {
-        return surname;
+    @Override
+    public void getData() {
+        System.out.println("ID: " + id + "." + " FULL NAME: " + name + " " + surname + ". LOGIN: " + login + ". PASSWORD: " + password + "." + " SALARY: " + gpa);
+        System.out.println("SUBJECTS: ");
+        for (int i = 0; i < indexOfCourse; i++) {
+            System.out.println(courses[i]);
+        }
     }
 
     public double getGpa() {
         return gpa;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
     public void setGpa(double gpa) {
         this.gpa = gpa;
     }
 
-    @Override
-    public String toString() {
-        return "Student{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", gpa=" + gpa +
-                '}';
+    public void addSubject(String subject) {
+        courses[indexOfCourse] = subject;
+        indexOfCourse++;
     }
 }
