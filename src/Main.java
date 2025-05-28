@@ -1,10 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-        FerrariEngine ferrariEngine = new FerrariEngine(5,88,17);
-
-        System.out.println("Engine Volume: " + ferrariEngine.getEngineVolume());
-        System.out.println("Cylinder Amount: " + ferrariEngine.getCylinderAmount());
-        System.out.println("Engine Weight: " + ferrariEngine.getEngineWeight());
-        System.out.println("MAX: " + ferrariEngine.getMaxSpeed());
+        Student student = new Student(2, "zhansaya@bk.ru", "zhansaya12345", "Zhansaya", "Kulbaeva", "IT1-2015", 4);
+        String grade = student.generateGrade();
+        student.testMethod(grade);
     }
 }
